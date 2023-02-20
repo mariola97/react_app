@@ -11,7 +11,7 @@ function App() {
             <p>BA</p>
           </div>
           <div className="temp">
-            <h2>8*C</h2>
+            <h2>8°C</h2>
           </div>
           <div className="desc">
             <p>Clear</p>
