@@ -21,6 +21,12 @@ function App() {
           <div className="wind">
             <p>3.3 m/s</p>
           </div>
+          <div className="pressure">
+            <p>1015 </p>
+          </div>
+          <div className="degrees">
+            <p>50</p>
+          </div>
         </div>
       </div>
 
