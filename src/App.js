@@ -1,9 +1,22 @@
 import React, {useState} from "react";
 import styles from "./index.css";
 function App() {
-  const url='https://api.openweathermap.org/data/2.5/weather?q=Livno&appid=015a5a01c2d58dc27276745e599fa2d8'
+  const [data, setData]=useState({})
+  const [location, setLocation]=useState('')
+  const url='https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=015a5a01c2d58dc27276745e599fa2d8'
+  fetch (url).then ((response)=>response.json()).then((data)=>{
+    setData(data)
+    console.log(data)
+  })
+
   return (
     <div className="app">
+      <div className="input">
+        <input 
+        value={location}
+        placeholder="unesi grad"
+        type="text"/>
+      </div>
       <div className="container">
         <div className="Header">
           <div className="location">
@@ -35,6 +48,6 @@ function App() {
       
     </div>
   );
-}
+  }
 
 export default App;
