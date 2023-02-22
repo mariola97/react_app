@@ -11,8 +11,8 @@ function App() {
 
   return (
     <div className="app">
-      <div className="input">
-        <input 
+      <div className="input"> <br></br> <br></br> 
+      <input 
         value={location}
         onChange={event=>setLocation(event.target.value)}
         placeholder="unesi grad"
