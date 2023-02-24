@@ -4,11 +4,15 @@ function App() {
   const [data, setData]=useState({})
   const [location, setLocation]=useState('')
   const url='https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=015a5a01c2d58dc27276745e599fa2d8'
+  
+  const searchLocation =(event)=>{
+    if(event.key==='Enter'){
   fetch (url).then ((response)=>response.json()).then((data)=>{
     setData(data)
     console.log(data)
   })
-
+  setLocation('')
+  }}
   return (
     <div className="app">
       <div className="input"> <br></br> <br></br> 
@@ -16,12 +20,14 @@ function App() {
         value={location}
         onChange={event=>setLocation(event.target.value)}
         placeholder="unesi grad"
+        onKeyPress={this.searchLocation}
         type="text"/>
+        
       </div>
       <div className="container">
         <div className="Header">
           <div className="location">
-            <h1>Livno</h1>
+            <h1>{data.name}</h1>
             <p>BA</p>
           </div>
           <div className="temp">
