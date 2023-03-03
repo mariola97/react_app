@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import css from './index.css'
+import styles from './index.css'
 function App() {
   const [data, setData] = useState({})
   const [location, setLocation] = useState('')
@@ -29,11 +29,13 @@ function App() {
       <div className="container">
         <div className="Header">
           <div className="location">
-            <h1>Livno</h1>
-            <p>BA</p>
+            <h1>{data.name}</h1>
+          </div>
+          <div className='country'>
+          {data.sys ?<p>{data.sys.country}</p>:null}
           </div>
           <div className="temp">
-            <h2>8°C</h2>
+            {data.main ?<h2>{data.main.temp}</h2>:null}
           </div>
           <div className="desc">
             <p>Clear</p>
