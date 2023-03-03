@@ -35,7 +35,7 @@ function App() {
           {data.sys ?<p>{data.sys.country}</p>:null}
           </div>
           <div className="temp">
-            {data.main ?<h2>{data.main.temp}</h2>:null}
+            {data.main ?<h2>{((parseFloat(data.main.temp)-32)*5/9).toFixed(2)} °C</h2>:null}
           </div>
           <div className="desc">
             <p>Clear</p>
