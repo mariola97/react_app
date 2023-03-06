@@ -37,19 +37,22 @@ function App() {
           <div className="temp">
             {data.main ?<h2>{((parseFloat(data.main.temp)-32)*5/9).toFixed(2)} °C</h2>:null}
           </div>
+          <div className='icon'>
+            {data.weather ?<img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}></img>: null}
+          </div>
           <div className="desc">
-            <p>Clear</p>
+          {data.weather ?<p>{data.weather[0].description}</p> :null}
           </div>
         </div>
         <div className="bottom">
           <div className="wind">
-            <p>3.3 m/s</p>
-          </div>
-          <div className="pressure">
-            <p>1015 </p>
+          {data.wind ?<p>{data.wind.speed} m/s</p> :null}
           </div>
           <div className="degrees">
-            <p>50</p>
+          {data.wind ?<p>{data.wind.deg} degrees</p> :null}
+          </div>
+          <div className="pressure">
+          {data.main ?<p>{data.main.pressure} hpa</p> :null}
           </div>
         </div>
       </div>

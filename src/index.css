@@ -49,8 +49,7 @@ h2{
     margin:1rem auto;
 }
 .desc{
-    position:relative;
-    right:-50%;
+    text-align: center;
 }
 .bottom{
     justify-content: space-evenly;
