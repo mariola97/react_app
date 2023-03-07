@@ -4,7 +4,7 @@ function App() {
   const [data, setData] = useState({})
   const [location, setLocation] = useState('')
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=015a5a01c2d58dc27276745e599fa2d8`
   
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
@@ -50,15 +50,14 @@ function App() {
           </div>
           <div className="degrees">
           {data.wind ?(()=>{
-            if(data.wind.deg>330||data.wind.deg<30){ return <img src="assets/wind/north.png"></img>
-          }if(data.wind.deg>30){ return (<img src="assets/wind/east (2).png"></img>)
-        }if(data.wind.deg>120){ return <img src="assets/wind/east.png"></img>
-        }if(data.wind.deg>160){ return <img src="assets/wind/east (1).png"></img>
-      }if(data.wind.deg>200){ return <img src="assets/wind/south.png"></img>
-      }if(data.wind.deg>240){ return <img src="assets/wind/west.png"></img>
-    }if(data.wind.deg>280) {return <img src="assets/wind/west (1).png"></img>
-  }if(data.wind.deg<330) {return <img src="assets/wind/west (2).png"></img>
-          
+            if(data.wind.deg>330||data.wind.deg<30){ return (<img src="assets/wind/north.png"></img>)
+          } if(data.wind.deg>30){ return (<img src={`assets/wind/east (2).png`}></img>)
+        }   if(data.wind.deg>120){ return (<img src="assets/wind/east.png"></img>)
+        }   if(data.wind.deg>160){ return (<img src="assets/wind/east (1).png"></img>)
+      }     if(data.wind.deg>200){ return (<img src="assets/wind/south.png"></img>)
+      }     if(data.wind.deg>240){ return (<img src="assets/wind/west.png"></img>)
+    }       if(data.wind.deg>280) {return (<img src="assets/wind/west (1).png"></img>)
+  }         if(data.wind.deg<330) {return (<img src="assets/wind/west (2).png"></img>)
           } 
           })():null}
           </div>
