@@ -50,14 +50,14 @@ function App() {
           </div>
           <div className="degrees">
           {data.wind ?(()=>{
-            if(data.wind.deg>330||data.wind.deg<30){ return (<img src="assets/wind/north.png"></img>)
-          } if(data.wind.deg>30){ return (<img src={`assets/wind/east (2).png`}></img>)
-        }   if(data.wind.deg>120){ return (<img src="assets/wind/east.png"></img>)
-        }   if(data.wind.deg>160){ return (<img src="assets/wind/east (1).png"></img>)
-      }     if(data.wind.deg>200){ return (<img src="assets/wind/south.png"></img>)
-      }     if(data.wind.deg>240){ return (<img src="assets/wind/west.png"></img>)
-    }       if(data.wind.deg>280) {return (<img src="assets/wind/west (1).png"></img>)
-  }         if(data.wind.deg<330) {return (<img src="assets/wind/west (2).png"></img>)
+            if(data.wind.deg>330||data.wind.deg<30){ return (<img src={require("./assets/wind/north.png")} width='50px' height='50px'></img>)
+          } if(data.wind.deg>30){ return (<img src={require("./assets/wind/east (2).png")}width='50px' height='50px'></img>)
+        }   if(data.wind.deg>120){ return (<img src={require("./assets/wind/east.png")}width='50px' height='50px'></img>)
+        }   if(data.wind.deg>160){ return (<img src={require("./assets/wind/east (1).png")}width='50px' height='50px'></img>)
+      }     if(data.wind.deg>200){ return (<img src={require("./assets/wind/south.png")}width='50px' height='50px'></img>)
+      }     if(data.wind.deg>240){ return (<img src={require("./assets/wind/west.png")}width='50px' height='50px'></img>)
+    }       if(data.wind.deg>280) {return (<img src={require("./assets/wind/west (1).png")}width='50px' height='50px'></img>)
+  }         if(data.wind.deg<330) {return (<img src={require("./assets/wind/west (2).png")}width='50px' height='50px'></img>)
           } 
           })():null}
           </div>
