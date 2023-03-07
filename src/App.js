@@ -49,10 +49,21 @@ function App() {
           {data.wind ?<p>{data.wind.speed} m/s</p> :null}
           </div>
           <div className="degrees">
-          {data.wind ?<p>{data.wind.deg}</p>:null}
+          {data.wind ?(()=>{
+            if(data.wind.deg>330||data.wind.deg<30){ return <img src="assets/wind/north.png"></img>
+          }if(data.wind.deg>30){ return (<img src="assets/wind/east (2).png"></img>)
+        }if(data.wind.deg>120){ return <img src="assets/wind/east.png"></img>
+        }if(data.wind.deg>160){ return <img src="assets/wind/east (1).png"></img>
+      }if(data.wind.deg>200){ return <img src="assets/wind/south.png"></img>
+      }if(data.wind.deg>240){ return <img src="assets/wind/west.png"></img>
+    }if(data.wind.deg>280) {return <img src="assets/wind/west (1).png"></img>
+  }if(data.wind.deg<330) {return <img src="assets/wind/west (2).png"></img>
+          
+          } 
+          })():null}
           </div>
           <div className="pressure">
-          {data.main ?<p>{data.main.pressure} hpa</p> :null}
+            {data.main ?<p>{data.main.pressure}</p>:null}
           </div>
         </div>
       </div>
