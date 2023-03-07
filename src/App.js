@@ -5,7 +5,7 @@ function App() {
   const [location, setLocation] = useState('')
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`
-
+  
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
       fetch (url).then ((response)=>response.json()).then((data)=>{
@@ -49,7 +49,7 @@ function App() {
           {data.wind ?<p>{data.wind.speed} m/s</p> :null}
           </div>
           <div className="degrees">
-          {data.wind ?<p>{data.wind.deg} degrees</p> :null}
+          {data.wind ?<p>{data.wind.deg}</p>:null}
           </div>
           <div className="pressure">
           {data.main ?<p>{data.main.pressure} hpa</p> :null}
