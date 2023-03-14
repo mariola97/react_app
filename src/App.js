@@ -32,7 +32,7 @@ function App() {
             <h1>{data.name}</h1>
           </div>
           <div className='country'>
-          {data.sys ?<p>{data.sys.country}</p>:null}
+          {data.sys ?<img src={`http://www.geonames.org/flags/x/${data.sys.country.toLowerCase()}.gif`} width="60" height="30"></img>:null}
           </div>
           <div className="temp">
             {data.main ?<h2>{((parseFloat(data.main.temp)-32)*5/9).toFixed(2)} °C</h2>:null}
@@ -50,19 +50,19 @@ function App() {
           </div>
           <div className="degrees">
           {data.wind ?(()=>{
-            if(data.wind.deg>330||data.wind.deg<30){ return (<img src={require("./assets/wind/north.png")} width='50px' height='50px'></img>)
-          } if(data.wind.deg>30){ return (<img src={require("./assets/wind/east (2).png")}width='50px' height='50px'></img>)
-        }   if(data.wind.deg>120){ return (<img src={require("./assets/wind/east.png")}width='50px' height='50px'></img>)
-        }   if(data.wind.deg>160){ return (<img src={require("./assets/wind/east (1).png")}width='50px' height='50px'></img>)
-      }     if(data.wind.deg>200){ return (<img src={require("./assets/wind/south.png")}width='50px' height='50px'></img>)
-      }     if(data.wind.deg>240){ return (<img src={require("./assets/wind/west.png")}width='50px' height='50px'></img>)
-    }       if(data.wind.deg>280) {return (<img src={require("./assets/wind/west (1).png")}width='50px' height='50px'></img>)
-  }         if(data.wind.deg<330) {return (<img src={require("./assets/wind/west (2).png")}width='50px' height='50px'></img>)
+            if(data.wind.deg>330||data.wind.deg<30){ return (<p>Sjeverni vjetar</p>)
+          } if(data.wind.deg>30){ return (<p>Sjeveroistočni vjetar</p>)
+        }   if(data.wind.deg>120){ return (<p>Istočni vjetar</p>)
+        }   if(data.wind.deg>160){ return (<p>Jugoistočni vjetar</p>)
+      }     if(data.wind.deg>200){ return (<p>Južni vjetar</p>)
+      }     if(data.wind.deg>240){ return (<p>Jugozapadni vjetar</p>)
+    }       if(data.wind.deg>280) {return (<p>Zapadni vjetar</p>)
+  }         if(data.wind.deg<330) {return (<p>Sjeverozapadni vjetar</p>)
           } 
           })():null}
           </div>
           <div className="pressure">
-            {data.main ?<p>{data.main.pressure}</p>:null}
+            {data.main ?<p>{data.main.pressure} hPa</p>:null}
           </div>
         </div>
       </div>
